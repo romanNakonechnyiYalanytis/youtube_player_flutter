@@ -65,7 +65,7 @@ class _PlayPauseButtonState extends State<PlayPauseButton>
     super.dispose();
   }
 
-  void _playPauseListener() => _controller.value.isPlaying
+  void _playPauseListener() => _controller.value.isPlaying || _controller.value.playerState != PlayerState.ended
       ? _animController.forward()
       : _animController.reverse();
 
