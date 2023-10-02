@@ -301,6 +301,9 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
           RawYoutubePlayer(
               key: widget.key,
               onEnded: (YoutubeMetaData metaData) {
+                controller.updateValue(
+                  controller.value.copyWith(isPlaying: false),
+                );
                 if (controller.flags.loop) {
                   controller.load(controller.metadata.videoId,
                       startAt: controller.flags.startAt,
